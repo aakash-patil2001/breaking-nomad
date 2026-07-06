@@ -1,0 +1,89 @@
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color */
+  --color-bg-primary: #F7F3E8;
+  --color-bg-secondary: #E8DFC6;
+  --color-text-primary: #243224;
+  --color-dark-section: #1F2D1F;
+  --color-accent: #C88A22;
+  --color-muted-olive: #A5A57A;
+  --color-border: #DDD3BC;
+
+  /* Type */
+  --font-display: 'General Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-editorial-serif: 'Cormorant Garamond', serif;
+
+  --fs-hero: clamp(3rem, 7vw + 1rem, 7.5rem);
+  --fs-h1: clamp(2.25rem, 4vw + 1rem, 4.5rem);
+  --fs-h2: clamp(1.75rem, 2.5vw + 1rem, 2.75rem);
+  --fs-h3: clamp(1.25rem, 1.5vw + 1rem, 1.75rem);
+  --fs-tagline: clamp(1.25rem, 1.5vw + 0.5rem, 2rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+
+  --letter-spacing-tight: -0.02em;
+  --lh-heading: 1.05;
+  --lh-body: 1.7;
+
+  /* Spacing */
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem;
+  --space-6: 4rem; --space-8: 6rem; --space-12: 9rem; --space-16: 12rem;
+
+  /* Structure */
+  --border-radius: 0px;
+  --container-wide: 1240px;
+  --container-narrow: 680px;
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 500ms;
+  --duration-slow: 900ms;
+}
+
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

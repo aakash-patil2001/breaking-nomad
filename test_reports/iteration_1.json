@@ -1,0 +1,31 @@
+{
+  "summary": "Frontend-only testing of Breaking Nomad marketing site complete. All sections render, all data-testids present, form validation (empty email prevents success), chip toggle (bg rgb(36,50,36), is-selected class), cursor head-tracking (rotate transforms on .bn-head), story sidebar active-state, image loading (8/8 loaded, 0 broken), and no horizontal overflow at 1920 or 390. Zero console errors.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only by design)", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "All specified data-testids verified. Form is intentionally frontend-only (no API). Waitlist submission is local React state.",
+  "verified_flows": [
+    "Hero: title, tagline, CTA (hero-cta-waitlist) visible; SVG illustration renders",
+    "Nav: all 4 nav-link testids present with correct hrefs (#story,#how,#escapes,#apply)",
+    "Head-tracking: 5 .bn-head elements receive rotate() transforms on pointermove",
+    "Story: 4 chapter nav items; is-active applied to chapter-1 when scrolled to story section",
+    "How It Works: how-step-01/02/03 all present",
+    "Escapes: escape-1, escape-2 both present; all 8 images loaded (no broken)",
+    "Itinerary: 8 days including day-01 and day-21; reserve-cta href=#apply",
+    "Application form: empty email blocks success; full submit shows success message; mountains chip toggles is-selected class with bg rgb(36,50,36)",
+    "Footer visible",
+    "No horizontal overflow at 1920px or 390px",
+    "Zero console errors"
+  ]
+}
